@@ -44,9 +44,13 @@ class OnboardingScreen extends ConsumerWidget {
       foregroundColor: AssetsConstants.primaryLight,
       introductionList: list,
       onTapSkipButton: () async {
-        await onboardingService.completeOnboarding();
-
-        context.router.replace(const TabViewScreenRoute());
+        try {
+          await onboardingService.completeOnboarding();
+          context.router.replace(const TabViewScreenRoute());
+        } catch (e) {
+          // Xử lý lỗi nếu có
+          print('Error completing onboarding: $e');
+        }
       },
       skipTextStyle: const TextStyle(
         color: Colors.blueGrey,

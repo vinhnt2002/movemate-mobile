@@ -19,29 +19,26 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-          // Màn hình Onboarding
+        // Màn hình Onboarding
         AutoRoute(
           page: OnboardingScreenRoute.page,
         ),
         AutoRoute(
-          page: HomeScreenRoute.page,
-        ),
-        AutoRoute(
-          page: OrderScreenRoute.page,
-        ),
-
-
-
-        AutoRoute(
           page: TabViewScreenRoute.page,
           initial: true,
-          guards: [OnboardingGuard(_ref)],
+          guards: [OnboardingGuard(ref: _ref)],
           // guards: [AuthGuard(ref: _ref)],
           children: [
             AutoRoute(page: HomeScreenRoute.page),
             AutoRoute(page: ProfileScreenRoute.page),
             AutoRoute(page: OrderScreenRoute.page),
           ],
+        ),
+        AutoRoute(
+          page: HomeScreenRoute.page,
+        ),
+        AutoRoute(
+          page: OrderScreenRoute.page,
         ),
       ];
 }

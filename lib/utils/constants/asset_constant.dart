@@ -126,7 +126,7 @@ class AssetsConstants {
   static const double defaultMargin = 10.0;
 
   // Title
-  static const String appTitle = 'BẾP HỘI';
+  static const String appTitle = 'Move Mate';
 
   // Icons
   static const Icon iconSuccess = Icon(

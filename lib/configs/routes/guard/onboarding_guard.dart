@@ -7,7 +7,7 @@ import '../app_router.dart';
 class OnboardingGuard extends AutoRouteGuard {
   final Ref _ref;
 
-  OnboardingGuard(this._ref);
+  OnboardingGuard({required Ref ref}) : _ref = ref;
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
