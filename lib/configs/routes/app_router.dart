@@ -5,6 +5,8 @@ import '../../features/home/presentation/home_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/order/presentation/order_screen.dart';
 import '../../tab_screen.dart';
+import '../../onboarding_screen.dart';
+import 'guard/onboarding_guard.dart';
 
 part 'app_router.gr.dart';
 
@@ -17,6 +19,10 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
+          // Màn hình Onboarding
+        AutoRoute(
+          page: OnboardingScreenRoute.page,
+        ),
         AutoRoute(
           page: HomeScreenRoute.page,
         ),
@@ -24,12 +30,12 @@ class AppRouter extends _$AppRouter {
           page: OrderScreenRoute.page,
         ),
 
-// onboarding   => 1 chạy lần khi vào  => lưu nó 1 cái context => true/false => true 
-// if(...=true)
+
 
         AutoRoute(
           page: TabViewScreenRoute.page,
           initial: true,
+          guards: [OnboardingGuard(_ref)],
           // guards: [AuthGuard(ref: _ref)],
           children: [
             AutoRoute(page: HomeScreenRoute.page),
