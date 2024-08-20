@@ -3,7 +3,6 @@ import '../../utils/constants/asset_constant.dart';
 
 class AppTheme {
   static ThemeData theme = ThemeData.dark().copyWith(
-    useMaterial3: true,
     scaffoldBackgroundColor: AssetsConstants.scaffoldColor,
     appBarTheme: const AppBarTheme(
       backgroundColor: AssetsConstants.whiteColor,

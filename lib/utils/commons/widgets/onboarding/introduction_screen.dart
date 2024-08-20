@@ -12,14 +12,14 @@ class IntroScreenOnboarding extends StatefulWidget {
 
 
   final Function()? onTapSkipButton;
-  IntroScreenOnboarding({
-    Key? key,
+  const IntroScreenOnboarding({
+    super.key,
     this.introductionList,
     this.onTapSkipButton,
     this.backgroudColor,
     this.foregroundColor,
     this.skipTextStyle = const TextStyle(fontSize: 20),
-  }) : super(key: key);
+  });
 
   @override
   _IntroScreenOnboardingState createState() => _IntroScreenOnboardingState();
@@ -37,7 +37,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
         value: SystemUiOverlayStyle.light,
         child: Container(
           color:
-              widget.backgroudColor ?? Theme.of(context).colorScheme.background,
+              widget.backgroudColor ?? Theme.of(context).colorScheme.surface,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0),
             child: Column(
@@ -56,10 +56,10 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
                   ],
                 ),
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     height: 550.0,
                     child: PageView(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       controller: _pageController,
                       onPageChanged: (int page) {
                         setState(() {
@@ -162,7 +162,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Container(
+        SizedBox(
           width: 80,
           height: 80,
           child: CircleProgressBar(
@@ -184,12 +184,12 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
             onPressed: () {
               _currentPage != widget.introductionList!.length - 1
                   ? _pageController.nextPage(
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.ease,
                     )
                   : widget.onTapSkipButton!();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_ios,
               color: Colors.white,
             ),

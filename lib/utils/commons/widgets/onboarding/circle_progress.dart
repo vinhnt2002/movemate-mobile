@@ -10,12 +10,12 @@ class CircleProgressBar extends StatefulWidget {
   final double? value;
 
   const CircleProgressBar({
-    Key? key,
+    super.key,
     this.animationDuration = const Duration(seconds: 1),
     this.backgroundColor = const Color(0x00000000),
     required this.foregroundColor,
     this.value = 0,
-  }) : super(key: key);
+  });
 
   @override
   CircleProgressBarState createState() {
@@ -115,12 +115,12 @@ class CircleProgressBarState extends State<CircleProgressBar>
               foregroundColorTween?.evaluate(curve) ?? widget.foregroundColor;
 
           return CustomPaint(
-            child: child,
             foregroundPainter: CircleProgressBarPainter(
               backgroundColor: backgroundColor,
               foregroundColor: foregroundColor,
               percentage: valueTween!.evaluate(curve),
             ),
+            child: child,
           );
         },
       ),
@@ -157,7 +157,7 @@ class CircleProgressBarPainter extends CustomPainter {
     final radius = (shortestSide / 2);
 
     // Start at the top. 0 radians represents the right edge
-    final double startAngle = -(2 * Math.pi * 0.25);
+    const double startAngle = -(2 * Math.pi * 0.25);
     final double sweepAngle = (2 * Math.pi * (percentage));
 
     // Don't draw the background if we don't have a background color
