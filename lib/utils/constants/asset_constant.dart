@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class AssetsConstants {
   // Colors
   // PRIMARY
-  static const primaryLighter = Color(0xffFCE4EC);
+  static const primaryLighter = Color(0xffFF9B63);
   static const primaryLight = Color(0xffF8BBD0);
-  static const primaryMain = Color(0xffEC407A);
-  static const primaryDark = Color(0xffD81B60);
-  static const primaryDarker = Color(0xffC2185B);
+
+  static const primaryMain = Color(0xffFF5C00 );
+  static const primaryDark = Color(0xffFF5C00);
+  static const primaryDarker = Color(0xffFF5C00);
 
   // SECONDARY
   static const secondaryLighter = Color(0xffD1E9FC);
@@ -79,7 +80,7 @@ class AssetsConstants {
   static const purple4 = Color(0xff6C0BA9);
 
   // other
-  static const mainColor = Color(0xffEC407A);
+  static const mainColor = Color(0xffFF5C00);
   static const warningColor = Color(0xffFF0000);
   static const subtitleColor = Color(0xff868C98);
   static const subtitleColorM = Color(0xff7F858D);
