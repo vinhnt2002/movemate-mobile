@@ -2,7 +2,7 @@ name: movemate
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -32,17 +32,24 @@ dependencies:
   riverpod_annotation: ^2.3.3
   shared_preferences: ^2.0.15
   
+  carousel_slider: ^4.0.0
 
-    # Router
-  auto_route: ^7.8.4
+  # Intro
+  # intro_screen_onboarding_flutter: ^1.0.0
+
+  # Router
+  auto_route:
+    ^7.8.4
 
     # Handle exception
-  fpdart: ^1.1.0
+  fpdart:
+    ^1.1.0
 
-   # Networking
+    # Networking
   retrofit: ^4.0.3
   dio: ^5.4.0
-  awesome_dio_interceptor: ^1.0.0
+  awesome_dio_interceptor:
+    ^1.0.0
 
   #Icon
   icons_plus: ^4.0.0
@@ -79,6 +86,9 @@ dev_dependencies:
 flutter:
 
  
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -86,8 +96,13 @@ flutter:
     - assets/images/onboarding/onboarding1.png
     - assets/images/onboarding/onboarding2.png
     - assets/images/onboarding/onboarding3.png
-
-    - assets/images/background/bg_1.jpg
+    - assets/images/home/pexels-photoscom-933981.png
+    - assets/images/home/vanchuyen1.png
+    - assets/images/home/vanchuyen2.png
+    - assets/images/home/vanchuyen3.png
+    - assets/images/home/vanchuyen4.png
+    - assets/images/home/Group18564.png
+    - assets/images/home/image78.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -4,7 +4,7 @@ class AssetsConstants {
   // Colors
   // PRIMARY
   static const primaryLighter = Color(0xffFF9B63);
-  static const primaryLight = Color(0xffF8BBD0);
+  static const primaryLight = Color(0xffFF9B63);
 
   static const primaryMain = Color(0xffFF5C00 );
   static const primaryDark = Color(0xffFF5C00);

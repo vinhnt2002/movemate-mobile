@@ -17,7 +17,7 @@ class OnboardingGuard extends AutoRouteGuard {
     if (isOnboardingCompleted) {
       resolver.next(true);
     } else {
-      resolver.redirect(OnboardingScreenRoute());
+      resolver.redirect(const OnboardingScreenRoute());
     }
   }
 }
