@@ -21,7 +21,6 @@ version: 1.0.0+1
 environment:
   sdk: ^3.5.0
 
-
 dependencies:
   flutter:
     sdk: flutter
@@ -31,7 +30,7 @@ dependencies:
   hooks_riverpod: ^2.4.9
   riverpod_annotation: ^2.3.3
   shared_preferences: ^2.0.15
-  
+
   carousel_slider: ^4.0.0
 
   # Intro
@@ -48,12 +47,11 @@ dependencies:
     # Networking
   retrofit: ^4.0.3
   dio: ^5.4.0
-  awesome_dio_interceptor:
-    ^1.0.0
+  awesome_dio_interceptor: ^1.0.0
 
   #Icon
-  icons_plus: ^4.0.0
-
+  icons_plus:
+    ^4.0.0
 
     # Animation
   lottie: ^2.7.0
@@ -84,8 +82,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
- 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -103,6 +99,9 @@ flutter:
     - assets/images/home/vanchuyen4.png
     - assets/images/home/Group18564.png
     - assets/images/home/image78.png
+    - assets/images/home/image13.png
+
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
