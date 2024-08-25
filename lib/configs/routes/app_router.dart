@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:movemate/features/auth/presentation/sign_in/sign_in_screen.dart';
+import 'package:movemate/features/promotion/presentation/promotion_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/profile/presentation/profile_screen.dart';
 import '../../features/order/presentation/order_screen.dart';
@@ -29,8 +32,9 @@ class AppRouter extends _$AppRouter {
           // guards: [AuthGuard(ref: _ref)],
           children: [
             AutoRoute(page: HomeScreenRoute.page),
-            AutoRoute(page: ProfileScreenRoute.page),
             AutoRoute(page: OrderScreenRoute.page),
+            AutoRoute(page: PromotionScreenRoute.page),
+            AutoRoute(page: ProfileScreenRoute.page),
           ],
         ),
         AutoRoute(
@@ -38,6 +42,10 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: OrderScreenRoute.page,
+        ),
+        AutoRoute(
+          // initial: true,
+          page: PromotionScreenRoute.page,
         ),
       ];
 }

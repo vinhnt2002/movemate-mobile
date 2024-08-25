@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/background_image.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/header.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/promotion_banner.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/promotion_section.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/service_section.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/service_selector.dart';
-import 'package:movemate/utils/commons/widgets/home-layout/widget/vehicle_carousel.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/background_image.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/header.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/promotion_banner.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/promotion_section.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/service_section.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/service_selector.dart';
+import 'package:movemate/utils/commons/widgets/home_layout/widget/vehicle_carousel.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
