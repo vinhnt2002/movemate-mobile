@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:auto_route/auto_route.dart';
-import 'custom_scaford.dart';
+import '../custom_scaford.dart';
 import 'package:icons_plus/icons_plus.dart';
 import '../../../../utils/constants/asset_constant.dart';
 import '../../../../utils/commons/widgets/widgets_common_export.dart';
@@ -14,7 +14,7 @@ import '../../../../utils/resources/validations.dart';
 class SignInScreen extends HookConsumerWidget with Validations {
   SignInScreen({super.key});
 
-  final TextEditingController username =
+  final TextEditingController email =
       TextEditingController(text: 'example@email.com');
   final TextEditingController password =
       TextEditingController(text: 'password123');
@@ -24,13 +24,13 @@ class SignInScreen extends HookConsumerWidget with Validations {
     required GlobalKey<FormState> formKey,
     required BuildContext context,
     required WidgetRef ref,
-    required String username,
+    required String email,
     required String password,
   }) async {
     // if (formKey.currentState!.validate()) {
     //   unfocus(context);
     //   await ref.read(signInControllerProvider.notifier).signIn(
-    //         username,
+    //         email,
     //         password,
     //         context,
     //       );
@@ -40,7 +40,7 @@ class SignInScreen extends HookConsumerWidget with Validations {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.sizeOf(context);
-    final username = useTextEditingController();
+    final email = useTextEditingController();
     final password = useTextEditingController();
     // final state = ref.watch(signInControllerProvider);
     final formKey = useMemoized(GlobalKey<FormState>.new, const []);
@@ -79,7 +79,7 @@ class SignInScreen extends HookConsumerWidget with Validations {
                         height: 40.0,
                       ),
                       TextInput(
-                        textController: username,
+                        textController: email,
                         hintTextLable: "Tài khoản",
                         hintText: 'Nhập tài khoản',
                         onValidate: (val) => '',
@@ -144,7 +144,7 @@ class SignInScreen extends HookConsumerWidget with Validations {
                         height: 25.0,
                       ),
                       ValueListenableBuilder2(
-                        first: username,
+                        first: email,
                         second: password,
                         builder: (_, a, b, __) => SizedBox(
                           width: double.infinity,
@@ -157,7 +157,7 @@ class SignInScreen extends HookConsumerWidget with Validations {
                                 context: context,
                                 formKey: formKey,
                                 ref: ref,
-                                username: username.text.trim(),
+                                email: email.text.trim(),
                                 password: password.text.trim(),
                               );
                             },

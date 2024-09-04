@@ -21,7 +21,6 @@ version: 1.0.0+1
 environment:
   sdk: ^3.5.0
 
-
 dependencies:
   flutter:
     sdk: flutter
@@ -31,7 +30,7 @@ dependencies:
   hooks_riverpod: ^2.4.9
   riverpod_annotation: ^2.3.3
   shared_preferences: ^2.0.15
-  
+
   carousel_slider: ^4.0.0
 
   # Intro
@@ -48,12 +47,11 @@ dependencies:
     # Networking
   retrofit: ^4.0.3
   dio: ^5.4.0
-  awesome_dio_interceptor:
-    ^1.0.0
+  awesome_dio_interceptor: ^1.0.0
 
   #Icon
-  icons_plus: ^4.0.0
-
+  icons_plus:
+    ^4.0.0
 
     # Animation
   lottie: ^2.7.0
@@ -67,8 +65,24 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+# config native splash
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/splash/screen_splash.png
+  android_12:
+      image: assets/images/splash/screen_splash.png
+    # background_image: assets/images/splash/splash.png
+    # image: assets/images/splash/splash.png
+
+# config launcher icon
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/splash/screen_splash.png"
+  min_sdk_android: 21
+
 dev_dependencies:
-  flutter_test:
+  flutter_test: 
     sdk: flutter
 
   flutter_lints: ^4.0.0
@@ -79,16 +93,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   plugin_platform_interface: ^2.1.7
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
-
- 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -96,6 +101,10 @@ flutter:
     - assets/images/onboarding/onboarding1.png
     - assets/images/onboarding/onboarding2.png
     - assets/images/onboarding/onboarding3.png
+
+    - assets/images/background/bg_1.jpg
+    - assets/images/splash/screen_splash.png
+
     - assets/images/home/pexels-photoscom-933981.png
     - assets/images/home/vanchuyen1.png
     - assets/images/home/vanchuyen2.png

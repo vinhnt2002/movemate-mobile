@@ -4,10 +4,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'configs/routes/app_router.dart';
 import 'configs/theme/app_theme.dart';
 import 'utils/constants/asset_constant.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  
+void main() async {
+  // widget binding with native platform
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await Future.delayed(
+    Duration(seconds: 1),
+  );
+
+  FlutterNativeSplash.remove();
+
   // Khóa thiết bị ở chế độ dọc
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

@@ -145,3 +145,45 @@ class ValueListenableBuilder6<A, B, C, D, E, F> extends StatelessWidget {
         ),
       );
 }
+
+class ValueListenableBuilder4<A, B, C, D> extends StatelessWidget {
+  const ValueListenableBuilder4({
+    required this.first,
+    required this.second,
+    required this.third,
+    required this.fourth,
+    required this.builder,
+    super.key,
+    this.child,
+  });
+
+  final ValueListenable<A> first;
+  final ValueListenable<B> second;
+  final ValueListenable<C> third;
+  final ValueListenable<D> fourth;
+
+  final Widget? child;
+  final Widget Function(
+    BuildContext context,
+    A a,
+    B b,
+    C c,
+    D d,
+    Widget? child,
+  ) builder;
+
+  @override
+  Widget build(BuildContext context) => ValueListenableBuilder<A>(
+        valueListenable: first,
+        builder: (_, a, __) => ValueListenableBuilder<B>(
+          valueListenable: second,
+          builder: (_, b, __) => ValueListenableBuilder<C>(
+            valueListenable: third,
+            builder: (_, c, __) => ValueListenableBuilder<D>(
+              valueListenable: fourth,
+              builder: (context, d, _) => builder(context, a, b, c, d, child),
+            ),
+          ),
+        ),
+      );
+}
