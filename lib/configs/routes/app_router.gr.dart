@@ -18,25 +18,41 @@ abstract class _$AppRouter extends RootStackRouter {
     HomeScreenRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HomeScreen(),
+        child: const HomeScreen(),
       );
     },
     OnboardingScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<OnboardingScreenRouteArgs>(
+          orElse: () => const OnboardingScreenRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: OnboardingScreen(),
+        child: OnboardingScreen(key: args.key),
       );
     },
     OrderScreenRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: OrderScreen(),
+        child: const OrderScreen(),
       );
     },
     ProfileScreenRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProfileScreen(),
+        child: const ProfileScreen(),
+      );
+    },
+    PromotionScreenRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const PromotionScreen(),
+      );
+    },
+    SignInScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<SignInScreenRouteArgs>(
+          orElse: () => const SignInScreenRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignInScreen(key: args.key),
       );
     },
     TabViewScreenRoute.name: (routeData) {
@@ -64,16 +80,31 @@ class HomeScreenRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [OnboardingScreen]
-class OnboardingScreenRoute extends PageRouteInfo<void> {
-  const OnboardingScreenRoute({List<PageRouteInfo>? children})
-      : super(
+class OnboardingScreenRoute extends PageRouteInfo<OnboardingScreenRouteArgs> {
+  OnboardingScreenRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           OnboardingScreenRoute.name,
+          args: OnboardingScreenRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'OnboardingScreenRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<OnboardingScreenRouteArgs> page =
+      PageInfo<OnboardingScreenRouteArgs>(name);
+}
+
+class OnboardingScreenRouteArgs {
+  const OnboardingScreenRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'OnboardingScreenRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -102,6 +133,49 @@ class ProfileScreenRoute extends PageRouteInfo<void> {
   static const String name = 'ProfileScreenRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PromotionScreen]
+class PromotionScreenRoute extends PageRouteInfo<void> {
+  const PromotionScreenRoute({List<PageRouteInfo>? children})
+      : super(
+          PromotionScreenRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PromotionScreenRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignInScreen]
+class SignInScreenRoute extends PageRouteInfo<SignInScreenRouteArgs> {
+  SignInScreenRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SignInScreenRoute.name,
+          args: SignInScreenRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'SignInScreenRoute';
+
+  static const PageInfo<SignInScreenRouteArgs> page =
+      PageInfo<SignInScreenRouteArgs>(name);
+}
+
+class SignInScreenRouteArgs {
+  const SignInScreenRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SignInScreenRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

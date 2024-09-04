@@ -120,7 +120,7 @@ class _VehicleCarouselState extends State<VehicleCarousel> {
       children: [
         SizedBox(
           width: double.infinity,
-          height: 290, // Adjust height to fit vehicle options
+          height: 295, // Adjust height to fit vehicle options
           child: PageView.builder(
             controller: _pageController,
             itemCount: vehicleData.length,
@@ -175,11 +175,11 @@ class _VehicleCarouselState extends State<VehicleCarousel> {
       padding: const EdgeInsets.symmetric(horizontal: 0.0),
       child: Card(
         color: Colors.white,
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: 253,
           child: Padding(
-            padding: const EdgeInsets.only(left: 24.0),
+            padding: const EdgeInsets.only(left: 24.0, bottom: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -190,7 +190,7 @@ class _VehicleCarouselState extends State<VehicleCarousel> {
                       imagePath,
                       width: 244,
                       height: 207,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.scaleDown,
                     ),
                   ),
                 ),
@@ -205,34 +205,34 @@ class _VehicleCarouselState extends State<VehicleCarousel> {
                 Text(
                   description,
                   style: const TextStyle(
-                    fontSize: 13,
+                    fontSize: 16,
                     color: Colors.grey,
                   ),
                 ),
                 Row(
                   children: [
                     const Icon(Icons.fitness_center,
-                        size: 13, color: Colors.grey),
+                        size: 16, color: Colors.grey),
                     const SizedBox(width: 4),
                     Text(
                       grossTon,
-                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                     const SizedBox(width: 13),
                     const Icon(Icons.aspect_ratio,
-                        size: 13, color: Colors.grey),
+                        size: 16, color: Colors.grey),
                     const SizedBox(width: 4),
                     Text(
                       size,
-                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                     const SizedBox(width: 16),
                     const Icon(Icons.format_list_numbered,
-                        size: 13, color: Colors.grey),
+                        size: 16, color: Colors.grey),
                     const SizedBox(width: 4),
                     Text(
                       tripCount,
-                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                   ],
                 ),

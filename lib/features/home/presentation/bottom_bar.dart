@@ -19,12 +19,10 @@ class CustomBottomBar extends HookWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
-
-
     return CupertinoTabBar(
       currentIndex: tabsRouter.activeIndex,
       onTap: tabsRouter.setActiveIndex,
-      height: size.height * 0.06,
+      height: size.height * 0.07,
       backgroundColor: AssetsConstants.whiteColor,
       items: [
         BottomNavigationBarItem(
@@ -48,6 +46,7 @@ class CustomBottomBar extends HookWidget {
               size: AssetsConstants.defaultFontSize - 6.0,
             ),
           ),
+          label: 'Trang chủ', // Text label
         ),
         BottomNavigationBarItem(
           icon: Container(
@@ -64,12 +63,18 @@ class CustomBottomBar extends HookWidget {
                   ? AssetsConstants.primaryLight
                   : AssetsConstants.whiteColor,
             ),
-            child: const Icon(
-              Icons.shopping_bag,
-              color: AssetsConstants.primaryDark,
-              size: AssetsConstants.defaultFontSize - 6.0,
+            child: Image.asset(
+              "assets/icons/truck2.png",
+              color: tabsRouter.activeIndex == 1
+                  ? AssetsConstants.primaryDark
+                  : AssetsConstants
+                      .primaryDark, // Optional: different color when inactive
+              width: size.width * 0.6, // Adjust the icon size as needed
+              height: size.width * 0.6, // Adjust the icon size as needed
+              fit: BoxFit.scaleDown,
             ),
           ),
+          label: 'Đặt xe của tôi', // Text label
         ),
         BottomNavigationBarItem(
           icon: Container(
@@ -86,14 +91,20 @@ class CustomBottomBar extends HookWidget {
                   ? AssetsConstants.primaryLight
                   : AssetsConstants.whiteColor,
             ),
-            child: const Center(
-              child: FaIcon(
-                FontAwesomeIcons.bowlFood,
-                color: AssetsConstants.primaryDark,
-                size: AssetsConstants.defaultFontSize - 6.0,
+            child: Center(
+              child: Image.asset(
+                "assets/icons/discount.png",
+                color: tabsRouter.activeIndex == 1
+                    ? AssetsConstants.primaryDark
+                    : AssetsConstants
+                        .primaryDark, // Optional: different color when inactive
+                width: size.width * 0.6, // Adjust the icon size as needed
+                height: size.width * 0.6, // Adjust the icon size as needed
+                fit: BoxFit.scaleDown,
               ),
             ),
           ),
+          label: 'Gói dịch vụ', // Text label
         ),
         BottomNavigationBarItem(
           icon: Container(
@@ -116,6 +127,7 @@ class CustomBottomBar extends HookWidget {
               size: AssetsConstants.defaultFontSize - 6.0,
             ),
           ),
+          label: 'Tài khoản', // Text label
         ),
       ],
     );
