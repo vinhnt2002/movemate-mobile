@@ -194,7 +194,7 @@ class SignUpScreen extends HookConsumerWidget with Validations {
                               vertical: 0,
                               horizontal: 10,
                             ),
-                            child: const LabelText(
+                            child: LabelText(
                               content: 'Hoặc đăng nhập với',
                               size: AssetsConstants.defaultFontSize - 10.0,
                               fontWeight: FontWeight.w700,

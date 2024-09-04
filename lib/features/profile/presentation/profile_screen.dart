@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:icons_plus/icons_plus.dart';
-import 'package:movemate/features/auth/presentation/custom_scaford.dart';
 
-import '../../../../utils/constants/asset_constant.dart';
-import '../../../../utils/commons/widgets/widgets_common_export.dart';
-import '../../../../utils/resources/validations.dart';
 
 @RoutePage()
 class ProfileScreen extends StatelessWidget {
@@ -91,8 +84,8 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildProfileHeader() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
       child: Row(
         children: [
           CircleAvatar(
@@ -100,10 +93,10 @@ class ProfileScreen extends StatelessWidget {
             backgroundImage: AssetImage(
                 'assets/images/profile/Image.png'), // Replace with your image path
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
                 'Darlene Steward',
                 style: TextStyle(

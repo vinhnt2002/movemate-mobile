@@ -18,17 +18,22 @@ class _PromotionScreenState extends State<PromotionScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      FocusScope.of(context).unfocus();
+    });
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.orange,
         elevation: 0,
