@@ -55,6 +55,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: SignInScreen(key: args.key),
       );
     },
+    SignUpScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<SignUpScreenRouteArgs>(
+          orElse: () => const SignUpScreenRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignUpScreen(key: args.key),
+      );
+    },
     TabViewScreenRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -175,6 +183,35 @@ class SignInScreenRouteArgs {
   @override
   String toString() {
     return 'SignInScreenRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [SignUpScreen]
+class SignUpScreenRoute extends PageRouteInfo<SignUpScreenRouteArgs> {
+  SignUpScreenRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SignUpScreenRoute.name,
+          args: SignUpScreenRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpScreenRoute';
+
+  static const PageInfo<SignUpScreenRouteArgs> page =
+      PageInfo<SignUpScreenRouteArgs>(name);
+}
+
+class SignUpScreenRouteArgs {
+  const SignUpScreenRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SignUpScreenRouteArgs{key: $key}';
   }
 }
 

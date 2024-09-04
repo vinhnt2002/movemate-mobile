@@ -12,28 +12,8 @@ import '../../../../utils/commons/widgets/widgets_common_export.dart';
 import '../../../../utils/resources/validations.dart';
 
 @RoutePage()
-class ProfileScreen extends HookConsumerWidget with Validations {
-  ProfileScreen({super.key});
-
-  // handle submit
-  void submit({
-    required GlobalKey<FormState> formKey,
-    required BuildContext context,
-    required WidgetRef ref,
-    required String username,
-    required String email,
-    required String phoneNumber,
-    required String password,
-  }) async {
-    // if (formKey.currentState!.validate()) {
-    //   unfocus(context);
-    //   await ref.read(signInControllerProvider.notifier).signIn(
-    //         email,
-    //         password,
-    //         context,
-    //       );
-    // }
-  }
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -153,9 +133,6 @@ class ProfileScreen extends HookConsumerWidget with Validations {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: ListTile(
-        style: TextStyle(
-          fontSize: 14,
-        ),
         leading: Icon(
           icon,
           color: Colors.orange,
